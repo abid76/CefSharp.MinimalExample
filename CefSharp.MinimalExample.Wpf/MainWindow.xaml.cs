@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System.IO;
+using System.Windows;
 
 namespace CefSharp.MinimalExample.Wpf
 {
@@ -7,6 +8,9 @@ namespace CefSharp.MinimalExample.Wpf
         public MainWindow()
         {
             InitializeComponent();
+
+            var dir = Directory.GetCurrentDirectory();
+            Browser.Address = "file:///" + dir.Replace("\\", "/") + "/201805071024008880.html";
         }
     }
 }
